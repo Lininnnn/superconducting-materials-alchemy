@@ -44,8 +44,6 @@ The overall workflow of HGTC-Net includes:
 This work mainly uses the public superconducting materials database:
 
 - 3DSC
-- Materials Project (MP)
-- ICSD
 
 The dataset includes:
 
