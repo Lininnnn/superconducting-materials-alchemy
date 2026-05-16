@@ -208,20 +208,6 @@ Several predicted candidates exhibit high predicted superconducting critical tem
 
 # Requirements
 
-Recommended environment:
-
-```bash
-Python >= 3.9
-PyTorch
-PyTorch Geometric
-pymatgen
-xgboost
-scikit-learn
-numpy
-pandas
-matplotlib
-```
-
 Install dependencies:
 
 ```bash
