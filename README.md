@@ -241,9 +241,13 @@ HGTC-Net/
 │
 ├── data/
 ├── models/
-│   ├── hsc_xgb.py
-│   ├── priorgnn.py
-│
+    ├── build_alpha_tensors.py
+    ├── classifier_continue.py
+    ├── classifier_train.py
+    ├── create_summary_csv.py
+    ├── master_train.py
+    ├── model.py
+```
 ├── utils/
 ├── train.py
 ├── predict.py
