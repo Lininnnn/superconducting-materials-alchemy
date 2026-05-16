@@ -248,12 +248,6 @@ HGTC-Net/
     ├── master_train.py
     ├── model.py
 ```
-├── utils/
-├── train.py
-├── predict.py
-├── requirements.txt
-└── README.md
-```
 
 # License
 
