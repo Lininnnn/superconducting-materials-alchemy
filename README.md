@@ -213,13 +213,38 @@ pip install -r requirements.txt
 ```
 
 ---
-
 # Training
 
-Example training command:
+HGTC-Net adopts a structured workflow from data preprocessing to prior-guided graph neural network training. Follow the sequential steps below to train the model:
 
+## 1. Data Preparation
+Parse the raw CIF files to generate graph-level statistical descriptors and the initial summary CSV file:
 ```bash
-python train.py
+python models/create_summary_csv.py
+```
+
+## 2. Alpha Tensor Construction
+Construct the foundational multi-modal input tensors and map the crystal graph topologies before entering the classification stage:
+```bash
+python models/build_alpha_tensors.py
+```
+
+## 3. Stage 1: Classifier Training (HSC-XGB)
+Train the hierarchical XGBoost classifiers (Binary and Multi-class) from scratch using the prepared data to generate semantic prior categories:
+```bash
+python models/classifier_train.py
+```
+
+## 4. Classifier Fine-Tuning (Optional)
+If you need to continue training, update weights, or fine-tune the existing hierarchical classification models, execute:
+```bash
+python models/classifier_continue.py
+```
+
+## 5. Stage 2: Master Training Pipeline
+Run the end-to-end master script to integrate the semantic priors ($P_{class}$) with the graph network and orchestrate the full training workflow:
+```bash
+python models/master_train.py
 ```
 
 ---
